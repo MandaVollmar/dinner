@@ -2,7 +2,23 @@ package com.company;
 
 public class Italian {
     public String nameOfDish;
-    public String calories;
-    public boolean glutenFree;
+    public int caloriesOfDish;
+    public boolean isGlutenFree;
 
+    public void setNameOfDish (String dish){
+        nameOfDish = dish;
+    }
+    public String getNameOfDish (){
+        return nameOfDish;
+    }
+    public void setCaloriesOfDish (int calories) {
+        caloriesOfDish = calories;
+    }
+    public int getCaloriesOfDish (){
+        return caloriesOfDish;
+    }
+
+    public void setIsGlutenFree(boolean glutenFree) {
+        isGlutenFree = glutenFree;
+    }
 }
