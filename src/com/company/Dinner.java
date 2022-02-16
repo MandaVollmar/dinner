@@ -40,6 +40,12 @@ public class Dinner {
         italianFood[3].setIsGlutenFree(false);
         italianFood[4].setIsGlutenFree(false);
 
+        mexicanFood[0].setNameOfDish("tacos");
+        mexicanFood[1].setNameOfDish("nachos");
+        mexicanFood[2].setNameOfDish("chiliRelleno");
+        mexicanFood[3].setNameOfDish("enchiladas");
+        mexicanFood[4].setNameOfDish("fajitas");
+
         mexicanFood[0].setCaloriesOfDish(226);
         mexicanFood[1].setCaloriesOfDish(479);
         mexicanFood[2].setCaloriesOfDish(350);
@@ -58,19 +64,32 @@ public class Dinner {
 
         System.out.println("What type of food would you like to make? Please choose between Italian and Mexican");
         String userAnswer = userInput.nextLine();
+        System.out.println("How many calories would you like to be under?");
+        int userAnswer2 = userInput.nextInt();
+        System.out.println("Do you want a Gluten Free option?");
+        String userAnswer3 = userInput.nextLine();
+
         Random random = new Random(System.currentTimeMillis());
 
         for (int i = 0; i < italianFood.length || i < mexicanFood.length; ) {
-
             if (userAnswer.equals("Italian")) {
-                System.out.print("You should make: " + italianFood[random.nextInt(5)].getNameOfDish());
+                //System.out.print("You should make: " + italianFood[random.nextInt(5)].getNameOfDish());
                 break;
             } else if (userAnswer.equals("Mexican")) {
-                System.out.println("You should make: " + mexicanFood[random.nextInt(5)]);
+                //System.out.println("You should make: " + mexicanFood[random.nextInt(5)].getNameOfDish());
                 break;
             } else {
                 System.out.println("Not an option");
             }
+        }
+        for (int i = 0; i < italianFood.length || i < mexicanFood.length; ) {
+            if (userAnswer2 <= 400) {
+                System.out.println("If you want Italian, you should make " + italianFood[random.nextInt(5)].getNameOfDish());
+                System.out.println("If you want Mexican, you should make " + mexicanFood[random.nextInt(5)].getNameOfDish());
+            } else {
+                System.out.println("You should make " + italianFood[random.nextInt(5)].getNameOfDish());
+            }
+            break;
         }
     }
 }
