@@ -1,19 +1,25 @@
 package com.company;
 
-import java.nio.charset.StandardCharsets;
 import java.util.Arrays;
 
 public class Dinner {
 
     public static void main(String[] args) {
 	// write your code here
-        Italian myDish = new Italian();
-        Mexican myDish2 = new Mexican();
+        Italian bolognese = new Italian();
+        Italian fettuccini = new Italian();
+        Italian spaghetti=new Italian();
+        Italian lasagna=new Italian();
+        Italian chickenParmesan=new Italian();
+        Mexican tacos = new Mexican();
+        Mexican nachos= new Mexican();
+        Mexican chiliRelleno = new Mexican();
+        Mexican enchiladas =new Mexican();
+        Mexican fajitas = new Mexican();
 
 
-        String [] italianFood = {"Bolognese", "Fettuccini", "Spaghetti", "Lasagna", "Chicken Parmesan" };
-        String [] mexicanFood = {"Tacos", "Nachos", "Chili Relleno", "Enchiladas", "Fajitas"};
-
+        Italian [] italianFood = {bolognese, fettuccini, spaghetti, lasagna, chickenParmesan };
+        Mexican [] mexicanFood = {tacos, nachos, chiliRelleno, enchiladas, fajitas};
 
         italianFood[0].setCaloriesOfDish(297);
         italianFood[1].setCaloriesOfDish(415);
@@ -38,5 +44,8 @@ public class Dinner {
         mexicanFood[2].setIsGlutenFree(false);
         mexicanFood[3].setIsGlutenFree(false);
         mexicanFood[4].setIsGlutenFree(true);
+
+        //for (String italianFoods:italianFood){
+            System.out.println("For dinner you should make" + italianFood[1]);
+        }
     }
-}
