@@ -22,6 +22,12 @@ public class Dinner {
         Italian[] italianFood = {bolognese, fettuccini, spaghetti, lasagna, chickenParmesan};
         Mexican[] mexicanFood = {tacos, nachos, chiliRelleno, enchiladas, fajitas};
 
+        italianFood[0].setNameOfDish("bolognese");
+        italianFood[1].setNameOfDish("fettuccini");
+        italianFood[2].setNameOfDish("spaghetti");
+        italianFood[3].setNameOfDish("lasagna");
+        italianFood[4].setNameOfDish("chickenParmesan");
+
         italianFood[0].setCaloriesOfDish(297);
         italianFood[1].setCaloriesOfDish(415);
         italianFood[2].setCaloriesOfDish(670);
@@ -52,16 +58,19 @@ public class Dinner {
 
         System.out.println("What type of food would you like to make? Please choose between Italian and Mexican");
         String userAnswer = userInput.nextLine();
-        Random random = new Random();
-        int index = random.nextInt(italianFood.length);
-        int index2 = random.nextInt(mexicanFood.length);
+        Random random = new Random(System.currentTimeMillis());
 
-        if (userAnswer.equals("Italian")) {
-            System.out.print("You should make: " + italianFood[random.nextInt(5)]);
-        } else if (userAnswer.equals("Mexican")) {
-            System.out.println("You should make: " + mexicanFood[random.nextInt(5)]);
-        } else {
-            System.out.println("Not an option");
+        for (int i = 0; i < italianFood.length || i < mexicanFood.length; ) {
+
+            if (userAnswer.equals("Italian")) {
+                System.out.print("You should make: " + italianFood[random.nextInt(5)].getNameOfDish());
+                break;
+            } else if (userAnswer.equals("Mexican")) {
+                System.out.println("You should make: " + mexicanFood[random.nextInt(5)]);
+                break;
+            } else {
+                System.out.println("Not an option");
+            }
         }
     }
 }
