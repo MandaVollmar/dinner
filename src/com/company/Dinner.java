@@ -1,25 +1,26 @@
 package com.company;
 
-import java.util.Arrays;
+import java.util.Random;
+import java.util.Scanner;
 
 public class Dinner {
 
     public static void main(String[] args) {
-	// write your code here
+        // write your code here
         Italian bolognese = new Italian();
         Italian fettuccini = new Italian();
-        Italian spaghetti=new Italian();
-        Italian lasagna=new Italian();
-        Italian chickenParmesan=new Italian();
+        Italian spaghetti = new Italian();
+        Italian lasagna = new Italian();
+        Italian chickenParmesan = new Italian();
         Mexican tacos = new Mexican();
-        Mexican nachos= new Mexican();
+        Mexican nachos = new Mexican();
         Mexican chiliRelleno = new Mexican();
-        Mexican enchiladas =new Mexican();
+        Mexican enchiladas = new Mexican();
         Mexican fajitas = new Mexican();
 
 
-        Italian [] italianFood = {bolognese, fettuccini, spaghetti, lasagna, chickenParmesan };
-        Mexican [] mexicanFood = {tacos, nachos, chiliRelleno, enchiladas, fajitas};
+        Italian[] italianFood = {bolognese, fettuccini, spaghetti, lasagna, chickenParmesan};
+        Mexican[] mexicanFood = {tacos, nachos, chiliRelleno, enchiladas, fajitas};
 
         italianFood[0].setCaloriesOfDish(297);
         italianFood[1].setCaloriesOfDish(415);
@@ -45,7 +46,22 @@ public class Dinner {
         mexicanFood[3].setIsGlutenFree(false);
         mexicanFood[4].setIsGlutenFree(true);
 
-        for (String italianFoods:italianFood){
-            System.out.println("For dinner you should make" + italianFood[1]);
+
+        // Adding Scanner to ask question
+        Scanner userInput = new Scanner(System.in);
+
+        System.out.println("What type of food would you like to make? Please choose between Italian and Mexican");
+        String userAnswer = userInput.nextLine();
+        Random random = new Random();
+        int index = random.nextInt(italianFood.length);
+        int index2 = random.nextInt(mexicanFood.length);
+
+        if (userAnswer.equals("Italian")) {
+            System.out.print("You should make: " + italianFood[random.nextInt(5)]);
+        } else if (userAnswer.equals("Mexican")) {
+            System.out.println("You should make: " + mexicanFood[random.nextInt(5)]);
+        } else {
+            System.out.println("Not an option");
         }
     }
+}
