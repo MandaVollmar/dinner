@@ -45,7 +45,7 @@ public class Dinner {
         mexicanFood[3].setIsGlutenFree(false);
         mexicanFood[4].setIsGlutenFree(true);
 
-        //for (String italianFoods:italianFood){
+        for (String italianFoods:italianFood){
             System.out.println("For dinner you should make" + italianFood[1]);
         }
     }
